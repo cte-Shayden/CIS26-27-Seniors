@@ -1,3 +1,109 @@
+/*=============================================
+PORTFOLIO STYLE SHEET
+Table of Contents
+1. colors and fonts
+2. base / reset
+3. header and navigation (FLEXBOX)
+4. about section        (GRID)
+5. Skills section       (FLEXBOX WITH WRAP)
+6. Project Cards        (GRID Auto-Fit + FLEXBOX)
+7. Footer               (GRID + FLEXBOX)
+8. Responsive Media Queries
+===============================================*/
+
+/*============================ 1. Variables ===========================
+Change a color here and it changes everywhere its used. */
+:root { 
+    --ink:          #17324a; /* dark navy: header, footer, headings */
+    --ink-soft:     #4a6075; /* softer text */
+    --paper:        #f5f8fa; /* page background */
+    --white:        #ffffff;
+    --line:        #d3dde5; /* borders */
+    --river:        #1f7a8c; /* main accent: links and buttons */
+    --river-dark:   #165f6d; 
+    --gold:        #f2b134; /* highlight accents */
+
+    --font-head: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+    --font-body: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+
+   --max-width: 1100px;
+   --header-height: 70px;
+
+}
+
+/*============================ 2. Base / Reset ===========================*/
+*,
+*::before, 
+*::after {
+    box-sizing: border-box; /* padding and border widths count inside of the box width */
+    margin: 0;
+    padding: 0;
+}
+
+
+html { 
+    scroll-behavior: smooth;              /* smooth nav link scrolling */
+    scroll-padding-top: var(--header-height); 
+
+}
+
 body {
-    background-color: aqua;
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--ink);
+    background-color: var(--paper);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-head);
+   line-height: 1.2;
+}
+
+a{
+    color: var(--river);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px; 
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/*============================ 3. Header and Navigation (FLEXBOX) ===========================*/
+.site-header {                                          
+    position: sticky; /* header stays at the top while scrolling */
+    top: 0;
+    z-index: 10;
+    height: var(--header-height);
+    background-color: var(--ink); 
+    display: flex;
+    justify-content: space-between; /* logo left, nav right */
+    align-items: center;         /* vertically centered */
+    padding: 0 1.5rem;   
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.logo-initials {
+    font-family: var(--font-head);
+    font-weight: 700;
+    background-color: var(--gold);
+    color: var(--ink);
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    display: flex;       /* Flexbox can center one item perfectly */
+    justify-content: center;
+    align-items: center;
+
 }
