@@ -108,3 +108,27 @@ img {
 
 }
 
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr,);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    gap:2.5rem;
+}
+footer-bottom {
+    max-width: var(--max-width);
+    margin: 2.5rem auto 0;
+    padding-top: 1rem;
+    border-top
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    border-top: 1px solid var(--line);
+}
+
+.footer.col h2 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
