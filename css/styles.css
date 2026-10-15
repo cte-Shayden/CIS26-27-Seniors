@@ -132,3 +132,109 @@ footer-bottom {
     font-size: 1.125rem;
     margin-bottom: 0.5rem;
 }
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    margin-bottom: 0.5rem;
+    font-size: .8rem;
+}
+
+.footer-col a {
+    text-decoration: none;
+    color: var(--line);
+    font-weight: bold;
+}
+
+.footer-col a:hover {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+/* ======================== 6 project cards (GRID + FLEXBOX) ======================== */
+.projects {
+    border-top: 1px solid var(--line);
+}
+
+.section-intro {
+   color: var(--ink-soft);
+   margin-top: -0.5rem;
+   margin-bottom: 2rem;
+}
+
+/* auto-fit +minmax  = responsive cards with no media queries 
+each card is at least 280px wide; the browser fits as many colums as it can and shares the leftover space evenly */
+card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background-color: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: flex;
+}
+
+.card-banner {
+  height: 120px;
+  display: flex;
+ justify-content: center;
+  align-items: center;
+  font-family: "courier new", monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+/* banner color shows the project type*/
+.banner-html {
+    background-color: var(--ink);}
+    .banner-css {
+    background-color: var(--river);}
+    .banner-js {
+    background-color: v#5b4c9a;}
+    .banner-py {
+    background-color: var(--gold);}
+
+    .card-body {
+        padding: 1.5rem;
+        flex-grow: 1; /* body fills remaning card height */
+        flex-direction: column;
+        display: flex;
+
+        .tags {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1.25rem;
+
+    
+        }
+       .tags li {
+           font-size: 0.85rem;
+           padding: 0.15rem 0.6rem;
+           background-color: var(--paper);
+           border: 1px solid var(--line);
+           border-radius: 4px;
+       }
+
+       .card-link {
+           margin-top: auto; /* pushes the link to the bottom of the card */
+          align-self: flex-start; 
+          font-weight: 600;
+          text-decoration: none;
+          border-bottom: 2px solid var(--gold;
+       }
+
+       .card-link:hover {
+           color: var(--river-dark);
+           border-bottom: 2px solid var(--river);
+       }
+
