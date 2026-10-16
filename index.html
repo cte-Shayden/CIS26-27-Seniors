@@ -1,119 +1,167 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Shayden Sloan 2027 Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shayden Sloan's Computer and Information Science portfolio.">
+  <title>Shayden Sloan | Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
-   <header class="site-header">
-    <a class="logo" href="#about">
-      <span class="logo-initials">SS</span>
+<body id="top">
+  <header class="site-header">
+    <a class="logo" href="#about" aria-label="Shayden Sloan, home">
+      <span class="logo-initials" aria-hidden="true">SS</span>
       <span class="logo-name">Shayden Sloan</span>
     </a>
     <nav class="main-nav" aria-label="Main navigation">
       <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li class="dropdown">
+          <a href="#projects" aria-haspopup="true">Projects</a>
+          <ul class="submenu">
+            <li><a href="#project-1">Project 1</a></li>
+            <li><a href="#project-2">Project 2</a></li>
+            <li><a href="#project-3">Project 3</a></li>
+            <li><a href="#project-4">Project 4</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-   </header>
-   <!---Projects- -->
-   <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="section-intro">
-      <p>Work from my junior &amp; senior year in Computer &amp; Information Science. We work all of our senior year at Suny Canton</p>
-    <=== project card (copy and paste this whole <article> to add a new card) ===>
-      <div class="card-grid"
-        <article class="card">
-          <div class="card-banner banner-html">My First Project</div>
-          <div class="card-body">
-            <h3 class="card-title">My First Project</h3>
-            <p>lorem ipsum dolor sit amet</p>
-          <ul class="tags">
-              <li>HTML</li>
-              </ul>
-              <a href="#" class="card-link">View Project</a>
-        </article>
+  </header>
 
-         <article class="card">
-          <div class="card-banner banner-html">My First Project</div>
-          <div class="card-body">
-            <h3 class="card-title">My First Project</h3>
-            <p>lorem ipsum dolor sit amet</p>
-          <ul class="tags">
-              <li>HTML</li>
-              </ul>
-              <a href="#" class="card-link">View Project</a>
-        </article>
+  <main>
+    <section id="about" class="about section-wrap">
+      <div class="about-copy">
+        <p class="eyebrow">Computer &amp; Information Science</p>
+        <h1>Hi, I’m Shayden.</h1>
+        <p>
+          I’m a student in the Computer &amp; Information Science program at
+          St. Lawrence-Lewis BOCES. This portfolio shares work from my junior
+          and senior years as I prepare to continue my education at SUNY Canton.
+        </p>
+        <a class="button" href="#projects">Explore my projects</a>
+      </div>
+      <aside class="about-card" aria-label="Education">
+        <p class="about-card-label">Currently learning</p>
+        <h2>Technology, creativity, and problem-solving</h2>
+        <p>Computer science, cybersecurity, and game design at SUNY Canton.</p>
+      </aside>
+    </section>
 
-         <article class="card">
-          <div class="card-banner banner-html">My First Project</div>
+    <section id="skills" class="skills section-wrap">
+      <div class="section-heading">
+        <p class="eyebrow">What I’m learning</p>
+        <h2>Skills &amp; interests</h2>
+      </div>
+      <ul class="skill-list">
+        <li>Computer programming</li>
+        <li>Computer fundamentals</li>
+        <li>Cybersecurity</li>
+        <li>Game design</li>
+        <li>Media studies</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="projects section-wrap">
+      <div class="section-heading">
+        <p class="eyebrow">Selected classwork</p>
+        <h2>Projects</h2>
+        <p class="section-intro">
+          Work from my junior and senior years in Computer &amp; Information Science.
+        </p>
+      </div>
+      <div class="card-grid">
+        <article id="project-1" class="card">
+          <div class="card-banner banner-html" aria-hidden="true">&lt;/&gt;</div>
           <div class="card-body">
             <h3 class="card-title">My First Project</h3>
-            <p>lorem ipsum dolor sit amet</p>
-          <ul class="tags">
+            <p>My first project from Computer &amp; Information Science.</p>
+            <ul class="tags" aria-label="Technologies">
               <li>HTML</li>
-              </ul>
-              <a href="#" class="card-link">View Project</a>
+            </ul>
+          </div>
         </article>
+        <article id="project-2" class="card">
+          <div class="card-banner banner-css" aria-hidden="true">{ }</div>
+          <div class="card-body">
+            <h3 class="card-title">Web Design Project</h3>
+            <p>A class project exploring how web pages are structured and styled.</p>
+            <ul class="tags" aria-label="Technologies">
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+          </div>
+        </article>
+        <article id="project-3" class="card">
+          <div class="card-banner banner-js" aria-hidden="true">&lt;code&gt;</div>
+          <div class="card-body">
+            <h3 class="card-title">Programming Project</h3>
+            <p>A place to showcase a programming project from class.</p>
+            <ul class="tags" aria-label="Topics">
+              <li>Programming</li>
+            </ul>
+          </div>
+        </article>
+        <article id="project-4" class="card">
+          <div class="card-banner banner-py" aria-hidden="true">0101</div>
+          <div class="card-body">
+            <h3 class="card-title">Design &amp; Technology</h3>
+            <p>A place to share a game design, cybersecurity, or media project.</p>
+            <ul class="tags" aria-label="Topics">
+              <li>Design</li>
+              <li>Technology</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="footer-grid">
+      <section class="footer-col">
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:cte-shayden.sloan@sllboces.org">Email Shayden</a></li>
+          <li><a href="https://github.com/cte-shayden">GitHub profile</a></li>
+          <li><a href="https://www.sllboces.org/career-technical-education/cte-programs/software-development-and-business-design/" target="_blank" rel="noopener noreferrer">Computer &amp; Information Science at BOCES</a></li>
+          <li><a href="https://www.canton.edu/cyber/" target="_blank" rel="noopener noreferrer">SUNY Canton Cybersecurity</a></li>
+          <li><a href="https://www.canton.edu/csoet/game/" target="_blank" rel="noopener noreferrer">SUNY Canton Game Design</a></li>
+        </ul>
+      </section>
+      <section class="footer-col">
+        <h2>Education</h2>
+        <ul>
+          <li>St. Lawrence-Lewis BOCES — Computer &amp; Information Science, Class of 2027</li>
+          <li>SUNY Canton — Class of 2031</li>
+          <li>Home high school: Colton-Pierrepont Central School</li>
+        </ul>
+      </section>
+      <section class="footer-col">
+        <h2>Goals &amp; credentials</h2>
+        <ul>
+          <li>Graduating in 2027</li>
+          <li>YouScience Computer Programming 2 Certification</li>
+          <li>12 college credits earned:
+            <ul>
+              <li>CYBR 153: Computer Logic &amp; Algorithms — 3 credits</li>
+              <li>CYBR 172: Computer Fundamentals — 3 credits</li>
+              <li>GMMD 101: Introduction to Media Studies — 3 credits</li>
+              <li>GAME 110: Fundamentals of Game Design — 3 credits</li>
+            </ul>
+          </li>
+          <li>Next step: SUNY Canton</li>
+        </ul>
+      </section>
     </div>
-    </div>
-   </section>
-   <footer id="contact" class="site-footer">
-  <! -- column 1 contact --!>
-  <div class="footer-col"></div>
-  <h2>Contact</h2>
-  <ul>
-    <li>Email: <a href="mailto:cte-shayden.sloan@sllboces.org">cte-shayden.sloan@sllboces.org</a></li>
-    <li>GitHub: <a href="https://cte-shayden.github.io/CIS26-27-Seniors/" target="_blank" >GitHub Profile</a></li>
-    <li> St. Lawrence Lewis Boces</li> <a href="https://www.sllboces.org//career-technical-education/cte-programs/software-development-and-business-design/" target="_blank">Computer &amp; Information Science</a>
-    <li> Suny Canton Cybersecurity</li> <a href="https://www.canton.edu/cyber/" target="_blank">Suny Canton Cybersecurity</a>
-    <li> Suny Canton Game Design</li> <a href="https://www.canton.edu/csoet/game/" target="_blank">Suny Canton Game Design</a>
-  </ul>
-</div>
-
-<!- column 2 program information -->
-<div class="footer-col">
-<h2>CIS Information</h2>
-<ul>
-   <li>Sll BOCES - Computer &amp; Information Science Class of 2027</li>
-   <li>State University of New York at Canton - Class of 2031</li>
-   <li> Home High School: Colton Peirpont Central School</li>
-</ul>
-</footer>
-<!- colunm 3 goals and credentials -->
-<div class="footer-col"></div>
-<ul>
-   <li><i>Graduating 2027</i></li>
-   <li>Certifications:
-    <ul>
-      <li> YouScience Computer Programming 2 Certification</li>
-    </ul>
-   </li>
-   <li> College Credits
-    <ul>
-      <li> CYBR 153: Computer Logic &amp; Algorithms - 3 Credits</li>
-      <li> CYBR 172: Computer Fundamentals - 3 Credits</li>
-      <li> GMMD 101: Introduction to Media Studies - 3 Credits</li>
-      <li> GAME 110: Fundamentals of Game Design - 3 Credits</li>
-      <li> total college credits: 12 Credits</li>
-    </ul>
-   </li>
-   <li> Next Steps: Going to Suny Canton</li>
-   <li> <a href="#">Download my resume</a></li>
-</ul>
-div class="footer-col">
     <div class="footer-bottom">
-      <p>&copy; 2023 Shayden Sloan. All rights reserved.</p>
-      <a href="#about">Back to top</a>
+      <p>&copy; 2026 Shayden Sloan</p>
+      <a href="#top">Back to top</a>
     </div>
   </footer>
 </body>

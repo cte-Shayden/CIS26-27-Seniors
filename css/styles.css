@@ -1,240 +1,468 @@
-/*=============================================
-PORTFOLIO STYLE SHEET
-Table of Contents
-1. colors and fonts
-2. base / reset
-3. header and navigation (FLEXBOX)
-4. about section        (GRID)
-5. Skills section       (FLEXBOX WITH WRAP)
-6. Project Cards        (GRID Auto-Fit + FLEXBOX)
-7. Footer               (GRID + FLEXBOX)
-8. Responsive Media Queries
-===============================================*/
-
-/*============================ 1. Variables ===========================
-Change a color here and it changes everywhere its used. */
-:root { 
-    --ink:          #17324a; /* dark navy: header, footer, headings */
-    --ink-soft:     #4a6075; /* softer text */
-    --paper:        #f5f8fa; /* page background */
-    --white:        #ffffff;
-    --line:        #d3dde5; /* borders */
-    --river:        #1f7a8c; /* main accent: links and buttons */
-    --river-dark:   #165f6d; 
-    --gold:        #f2b134; /* highlight accents */
-
-    --font-head: "Space Grotesk", "Segoe UI", Arial, sans-serif;
-    --font-body: "Source Sans 3", "Segoe UI", Arial, sans-serif;
-
-   --max-width: 1100px;
-   --header-height: 70px;
-
+/* Portfolio styles */
+:root {
+  --ink: #17324a;
+  --ink-soft: #4a6075;
+  --paper: #f5f8fa;
+  --white: #fff;
+  --line: #d3dde5;
+  --river: #1f7a8c;
+  --river-dark: #165f6d;
+  --gold: #f2b134;
+  --font-head: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+  --max-width: 1100px;
+  --header-height: 70px;
 }
 
-/*============================ 2. Base / Reset ===========================*/
 *,
-*::before, 
+*::before,
 *::after {
-    box-sizing: border-box; /* padding and border widths count inside of the box width */
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
 }
 
-
-html { 
-    scroll-behavior: smooth;              /* smooth nav link scrolling */
-    scroll-padding-top: var(--header-height); 
-
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 1rem);
 }
 
 body {
-    font-family: var(--font-body);
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: var(--ink);
-    background-color: var(--paper);
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.6;
 }
 
-h1, h2, h3 {
-    font-family: var(--font-head);
-   line-height: 1.2;
+h1,
+h2,
+h3,
+p,
+ul {
+  margin-top: 0;
 }
 
-a{
-    color: var(--river);
+h1,
+h2,
+h3 {
+  font-family: var(--font-head);
+  line-height: 1.2;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+a {
+  color: var(--river);
 }
 
 a:focus-visible {
-    outline: 3px solid var(--gold);
-    outline-offset: 3px; 
-}
-img {
-    max-width: 100%;
-    display: block;
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
 }
 
-/*============================ 3. Header and Navigation (FLEXBOX) ===========================*/
-.site-header {                                          
-    position: sticky; /* header stays at the top while scrolling */
-    top: 0;
-    z-index: 10;
-    height: var(--header-height);
-    background-color: var(--ink); 
-    display: flex;
-    justify-content: space-between; /* logo left, nav right */
-    align-items: center;         /* vertically centered */
-    padding: 0 1.5rem;   
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  min-height: var(--header-height);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0 1.5rem;
+  background: var(--ink);
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
-    color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--white);
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .logo-initials {
-    font-family: var(--font-head);
-    font-weight: 700;
-    background-color: var(--gold);
-    color: var(--ink);
-    width: 42px;
-    height: 42px;
-    border-radius: 8px;
-    display: flex;       /* Flexbox can center one item perfectly */
-    justify-content: center;
-    align-items: center;
-
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 8px;
+  color: var(--ink);
+  background: var(--gold);
+  font-family: var(--font-head);
+  font-weight: 700;
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr,);
-    max-width: var(--max-width);
-    margin: 0 auto;
-    gap:2.5rem;
-}
-footer-bottom {
-    max-width: var(--max-width);
-    margin: 2.5rem auto 0;
-    padding-top: 1rem;
-    border-top
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 1rem 0;
-    border-top: 1px solid var(--line);
+.main-nav > ul,
+.submenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.footer.col h2 {
-    font-size: 1.125rem;
-    margin-bottom: 0.5rem;
+.main-nav > ul {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
-.footer-col ul {
-    list-style: none;
+.main-nav a {
+  display: block;
+  padding: 0.65rem 0.8rem;
+  color: var(--white);
+  text-decoration: none;
 }
 
-.footer-col li {
-    margin-bottom: 0.5rem;
-    font-size: .8rem;
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: var(--gold);
 }
 
-.footer-col a {
-    text-decoration: none;
-    color: var(--line);
-    font-weight: bold;
+.dropdown {
+  position: relative;
 }
 
-.footer-col a:hover {
-    color: var(--gold);
-    text-decoration: underline;
+.dropdown > a::after {
+  content: " \25be";
 }
 
-/* ======================== 6 project cards (GRID + FLEXBOX) ======================== */
-.projects {
-    border-top: 1px solid var(--line);
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  min-width: 12rem;
+  padding: 0.35rem 0;
+  border-radius: 0 0 6px 6px;
+  background: var(--ink);
+  box-shadow: 0 6px 12px rgb(0 0 0 / 25%);
+}
+
+.submenu a {
+  padding: 0.55rem 1rem;
+  border-top: 1px solid rgb(255 255 255 / 10%);
+}
+
+.dropdown:hover .submenu,
+.dropdown:focus-within .submenu {
+  display: block;
+}
+
+.section-wrap {
+  width: min(var(--max-width), calc(100% - 3rem));
+  margin-inline: auto;
+}
+
+.about {
+  display: grid;
+  min-height: 440px;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr);
+  align-items: center;
+  gap: 3rem;
+  padding-block: 5rem;
+}
+
+.about-copy {
+  max-width: 680px;
+}
+
+.about-copy > p:not(.eyebrow) {
+  max-width: 650px;
+  color: var(--ink-soft);
+}
+
+.eyebrow {
+  margin-bottom: 0.65rem;
+  color: var(--river);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: 5px;
+  color: var(--white);
+  background: var(--river);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: var(--river-dark);
+}
+
+.about-card {
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--gold);
+  border-radius: 10px;
+  background: var(--white);
+  box-shadow: 0 12px 28px rgb(23 50 74 / 8%);
+}
+
+.about-card-label {
+  margin-bottom: 0.5rem;
+  color: var(--river);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.about-card h2 {
+  font-size: 1.55rem;
+}
+
+.about-card p:last-child {
+  margin-bottom: 0;
+  color: var(--ink-soft);
+}
+
+.skills {
+  padding-block: 3.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.section-heading {
+  max-width: 680px;
+  margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+  margin-bottom: 0.75rem;
 }
 
 .section-intro {
-   color: var(--ink-soft);
-   margin-top: -0.5rem;
-   margin-bottom: 2rem;
+  margin-bottom: 0;
+  color: var(--ink-soft);
 }
 
-/* auto-fit +minmax  = responsive cards with no media queries 
-each card is at least 280px wide; the browser fits as many colums as it can and shares the leftover space evenly */
-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-list li,
+.tags li {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+}
+
+.projects {
+  padding-block: 3.5rem 5rem;
+  border-top: 1px solid var(--line);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 1.5rem;
 }
 
 .card {
-    background-color: var(--white);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    overflow: hidden;
-
-    display: flex;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  scroll-margin-top: calc(var(--header-height) + 1rem);
 }
 
 .card-banner {
-  height: 120px;
   display: flex;
- justify-content: center;
+  min-height: 120px;
   align-items: center;
-  font-family: "courier new", monospace;
-  font-size: 1.5rem;
-  font-weight: 700;
+  justify-content: center;
   color: var(--white);
+  font-family: "Courier New", monospace;
+  font-size: 1.75rem;
+  font-weight: 700;
 }
 
-/* banner color shows the project type*/
 .banner-html {
-    background-color: var(--ink);}
-    .banner-css {
-    background-color: var(--river);}
-    .banner-js {
-    background-color: v#5b4c9a;}
-    .banner-py {
-    background-color: var(--gold);}
+  background: var(--ink);
+}
 
-    .card-body {
-        padding: 1.5rem;
-        flex-grow: 1; /* body fills remaning card height */
-        flex-direction: column;
-        display: flex;
+.banner-css {
+  background: var(--river);
+}
 
-        .tags {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-bottom: 1.25rem;
+.banner-js {
+  background: #5b4c9a;
+}
 
-    
-        }
-       .tags li {
-           font-size: 0.85rem;
-           padding: 0.15rem 0.6rem;
-           background-color: var(--paper);
-           border: 1px solid var(--line);
-           border-radius: 4px;
-       }
+.banner-py {
+  color: var(--ink);
+  background: var(--gold);
+}
 
-       .card-link {
-           margin-top: auto; /* pushes the link to the bottom of the card */
-          align-self: flex-start; 
-          font-weight: 600;
-          text-decoration: none;
-          border-bottom: 2px solid var(--gold;
-       }
+.card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.35rem;
+}
 
-       .card-link:hover {
-           color: var(--river-dark);
-           border-bottom: 2px solid var(--river);
-       }
+.card-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
 
+.card-body > p {
+  color: var(--ink-soft);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 0.15rem 0.6rem;
+  background: var(--paper);
+  font-size: 0.85rem;
+}
+
+.site-footer {
+  padding: 3rem 1.5rem 1rem;
+  color: var(--white);
+  background: var(--ink);
+}
+
+.footer-grid {
+  display: grid;
+  width: min(var(--max-width), 100%);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  margin: 0 auto;
+}
+
+.footer-col h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.footer-col ul {
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 0.5rem;
+  color: #d3dde5;
+  font-size: 0.95rem;
+}
+
+.footer-col a,
+.footer-bottom a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.footer-col a:hover,
+.footer-bottom a:hover {
+  color: var(--gold);
+}
+
+.footer-bottom {
+  display: flex;
+  width: min(var(--max-width), 100%);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem auto 0;
+  padding: 1rem 0;
+  border-top: 1px solid rgb(255 255 255 / 20%);
+  color: #d3dde5;
+  font-size: 0.9rem;
+}
+
+.footer-bottom p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+    padding: 0.5rem 1rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .main-nav > ul {
+    gap: 0;
+  }
+
+  .main-nav a {
+    padding-inline: 0.65rem;
+    font-size: 1rem;
+  }
+
+  .about {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-block: 3.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .section-wrap {
+    width: min(var(--max-width), calc(100% - 2rem));
+  }
+
+  .main-nav a {
+    padding-inline: 0.45rem;
+    font-size: 0.92rem;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
