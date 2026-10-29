@@ -29,4 +29,4 @@ while balance < 20000: # the loop will run until the balaance is >= 20000
     balance = balance + interest
 #report year as the answer.
 print("Years to double", year)
-print("Final Balance", f"{balance:.2f}")
+print("Final Balance", "$",f"{balance:.2f}")
