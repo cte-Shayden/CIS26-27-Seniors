@@ -17,3 +17,15 @@
 # number 9: print("      +\n     + +\n    +   +\n   +-----+\n   | .-. |\n   | | | |\n   +-+-+-+")
 
 # number 10: print(" /\\_/\\     ----- \n( o.o )  / Hi!  \\\n > ^ <  < Friend |\n          \\ Coder!/\n           -----")
+
+# number 11: print("Alex\nJordan\nTaylor")
+
+# number 12: print("Hope is the thing with feathers\nThat perches in the soul,\nAnd sings the tune without the words,\nAnd never stops at all.")
+
+# number 13: print("* * * * * * ==================================\n * * * * *  ==================================\n* * * * * * ==================================\n * * * * *  ==================================\n* * * * * * ==================================\n * * * * *  ==================================\n* * * * * * ==================================\n * * * * *  ==================================\n* * * * * * ==================================\n==============================================\n==============================================\n==============================================\n==============================================\n==============================================\n==============================================")
+
+# number 14: print("Friend          Birthday\n------------------------\nZander           April 27\nPaul          June 15\nShayden          January 20")
+
+# number 15: print("Sales Tax Rates\n---------------\nAlaska: 0%\nHawaii: 4%\nDelaware: 0%\nOregon: 0%\nColorado: 2.9%")
+
+# number 16: print("English                         Spanish\n-----------------------------------------------\nGood morning.                   Buenos días.\nIt is a pleasure to meet you.   Es un placer conocerte.\nPlease call me tomorrow.        Por favor, llámame mañana.\nHave a nice day!                ¡Que tengas un buen día!")
